@@ -8,5 +8,18 @@
 <body>
 <input type=button id=button value="+1">
 <div id=result></div>
+<script>
+document.getElementById('button').onclick = function() {
+  var val = Number(localStorage.getItem('val') || 0) + 1;
+  localStorage.setItem('val', val);
+  render();
+}
+
+function render() {
+  document.getElementById('result').textContent = localStorage.getItem('val') || 0;
+}
+
+render();
+</script>
 </body>
 </html>
