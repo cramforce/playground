@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>localStorage counter</title>
+</head>
+<body>
+<input type=button id=button value="+1">
+<div id=result></div>
+<script>
+document.getElementById('button').onclick = function() {
+  var val = Number(getCookie('count') || 0) + 1;
+  setCookie('count', val, 300);
+  render();
+}
+
+function render() {
+  document.getElementById('result').textContent = getCookie('count') || 0;
+}
+
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days*24*60*60*1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for (var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+
+render();
+</script>
+</body>
+</html>
