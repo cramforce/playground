@@ -6,6 +6,7 @@
   var url = 'https://' + location.hostname.replace(/\./g, '-')
       + '.cdn.ampproject.org/c/'
       + (location.protocol == 'https:' ? 's/' : '')
+      + location.hostname + '/'
       + path;
   var i = document.createElement('iframe');
   i.src = url;
