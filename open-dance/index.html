@@ -1,0 +1,38 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    visibility: hidden;
+  }
+</style>
+
+<button id=prerender>Pre-render</button>
+<button id=navigate>Navigate</button>
+
+<script>
+
+var prerender = document.getElementById('prerender');
+var navigate = document.getElementById('navigate');
+
+prerender.onclick = function() {
+  if (window.prerenderFrame) {
+    return;  // already pre-rendered
+  }
+  var iframe = document.createElement('iframe');
+  iframe.src = './document.html';
+  iframe.name = 'prerenderFrame';
+  document.body.appendChild(iframe);
+}
+
+navigate.onclick = function() {
+  prerender.click();
+  var url = 'http://localhost:10000/open-dance/pub-stub.html';
+  url = 'http://github.nonblocking.io/playground/open-dance/pub-stub.html'
+  window.openedWindow = window.open(url, '_blank')
+}
+
+</script>
