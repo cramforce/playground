@@ -13,7 +13,7 @@
 
   var prefetchCacheStub = document.createElement('link');
   prefetchCacheStub.rel = 'prefetch';
-  prefetchCacheStub.href = 'https://cramforce.github.io/playground/open-dance/cache-stub2.html?2';
+  prefetchCacheStub.href = 'https://cramforce.github.io/playground/open-dance/cache-stub2.html?1';
   document.head.appendChild(prefetchCacheStub);
 
   var prefetchPubStub = document.createElement('link');
@@ -24,7 +24,7 @@
   document.head.appendChild(iframe);
 
   function augment(a) {
-    a.addEventListener('click', onclick, true);
+    document.documentElement.addEventListener('click', onclick, true);
   }
 
   function onclick(e) {
