@@ -13,13 +13,13 @@
 
   var prefetchCacheStub = document.createElement('link');
   prefetchCacheStub.rel = 'prefetch';
-  prefetchCacheStub.href = 'https://cramforce.github.io/playground/open-dance/cache-stub2.html';
+  prefetchCacheStub.href = 'https://cramforce.github.io/playground/open-dance/cache-stub2.html?2';
   document.head.appendChild(prefetchCacheStub);
 
   var prefetchPubStub = document.createElement('link');
   prefetchPubStub.rel = 'prefetch';
   prefetchPubStub.setAttribute('crossorigin', '');  // No cookies
-  prefetchPubStub.href = 'https://cramforce.github.io/playground/open-dance/pub-stub2.html';
+  prefetchPubStub.href = 'https://cramforce.github.io/playground/open-dance/pub-stub2.html?2';
 
   document.head.appendChild(iframe);
 
@@ -30,6 +30,6 @@
   function onclick(e) {
     e.preventDefault();
     e.stopImmediatePropagation();
-    window.open('https://cramforce.github.io/playground/open-dance/pub-stub2.html', '_blank');
+    window.open('https://cramforce.github.io/playground/open-dance/pub-stub2.html?2', '_blank');
   }
 })()
