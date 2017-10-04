@@ -1,2 +1,9 @@
 <!doctype html>
-<script>location.href = parent.opener.prerenderFrame.location.href;</script>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  document.replaceChild(document.documentElement, document.importNode(
+      parent.opener.prerenderFrame.document.documentElement,
+      true));
+</script>
+</head>

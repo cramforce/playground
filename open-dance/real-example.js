@@ -27,9 +27,16 @@
     document.documentElement.addEventListener('click', onclick, true);
   }
 
+  var first = true;
+
   function onclick(e) {
     e.preventDefault();
     e.stopImmediatePropagation();
-    window.open('https://cramforce.github.io/playground/open-dance/pub-stub2.html?2', '_blank');
+    if (first) {
+      window.open('https://cramforce.github.io/playground/', 'theWin');
+    } else {
+      window.open('https://cramforce.github.io/playground/open-dance/pub-stub2.html?2', 'theWin');
+    }
+    first = false;
   }
 })()
