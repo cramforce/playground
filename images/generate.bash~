@@ -1,1 +1,1 @@
-find . -name \*.jpg | sed 's:./::' | sed 's/^/<img src="/' | sed 's/$/">$<br>/' > index.html
+find . -name \*.jpg | sed 's:./::' | sed 's/^/<img src="/' | sed 's/$/"><br>/' > index.html
